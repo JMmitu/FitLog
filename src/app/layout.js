@@ -1,4 +1,7 @@
 import "./globals.css";
+import { PlanProvider } from "@/context/PlanContext";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "FitLog — Workout Library",
@@ -9,7 +12,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-[#0a0a0a] text-white antialiased">{children}</body>
+      <body className="bg-fitlog-bg text-white antialiased">
+        <PlanProvider>
+            <Navbar />
+            <main>{children}</main>
+            <Footer />
+          </PlanProvider>
+      </body>
     </html>
   );
 }
