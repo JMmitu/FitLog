@@ -1,7 +1,24 @@
+import Hero from "@/components/Hero";
+import WorkoutGrid from "@/components/WorkoutGrid";
+
 export default function Home() {
   return (
-    <main className="min-h-screen flex items-center justify-center">
-      <h1 className="text-2xl font-bold">FitLog — Step 1 Setup ✅</h1>
-    </main>
+    <>
+      <Hero />
+      <section
+        id="library"
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16"
+      >
+        <div className="mb-8 text-center sm:text-left">
+          <h2 className="font-display font-extrabold uppercase text-3xl sm:text-4xl tracking-tight">
+            The Library
+          </h2>
+          <p className="mt-2 text-fitlog-muted">
+            Twelve lifts covering every major muscle group.
+          </p>
+        </div>
+        <WorkoutGrid />
+      </section>
+    </>
   );
 }
