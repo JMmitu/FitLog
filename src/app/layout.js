@@ -1,5 +1,6 @@
 import "./globals.css";
 import { PlanProvider } from "@/context/PlanContext";
+import { ToastProvider } from "@/context/ToastContext";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -13,11 +14,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="bg-fitlog-bg text-white antialiased">
-        <PlanProvider>
+        <ToastProvider>
+          <PlanProvider>
             <Navbar />
             <main>{children}</main>
             <Footer />
           </PlanProvider>
+        </ToastProvider>
       </body>
     </html>
   );

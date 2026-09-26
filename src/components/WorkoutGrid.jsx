@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { getAllWorkouts } from "@/lib/api";
 import LoadingSpinner from "./LoadingSpinner";
 import WorkoutCard from "./WorkoutCard";
-import SortDropdown from "./SortDropdown";
+
 
 export default function WorkoutGrid() {
   const [workouts, setWorkouts] = useState([]);
@@ -51,9 +51,6 @@ export default function WorkoutGrid() {
 
   return (
     <div>
-      <div className="flex justify-end mb-6">
-        <SortDropdown value={sortBy} onChange={setSortBy} />
-      </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {sortedWorkouts.map((workout) => (

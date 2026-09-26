@@ -1,26 +1,25 @@
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
+
 export default function NotFound() {
   return (
-    <main className="min-h-screen bg-[#0a0a0a] text-white flex items-center justify-center px-6">
-      <div className="text-center">
-        <p className="text-[#ccff00] font-bold tracking-widest mb-4">
-          404 ERROR
-        </p>
-
-        <h1 className="text-5xl md:text-7xl font-black mb-4">
-          PAGE NOT FOUND
-        </h1>
-
-        <p className="text-gray-400 mb-8">
-          The page you are looking for does not exist.
-        </p>
-
-        <a
-          href="/"
-          className="inline-flex items-center rounded-full bg-[#ccff00] px-6 py-3 font-bold text-black transition hover:opacity-80"
-        >
-          BACK TO WORKOUTS
-        </a>
-      </div>
-    </main>
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-[60vh] flex flex-col items-center justify-center text-center">
+      <p className="font-display font-extrabold text-fitlog-accent text-6xl sm:text-8xl tracking-tight">
+        404
+      </p>
+      <h1 className="font-display font-extrabold uppercase text-2xl sm:text-3xl tracking-tight mt-4">
+        Workout Not Found
+      </h1>
+      <p className="text-fitlog-muted mt-3 max-w-sm">
+        This lift doesn&apos;t exist in the library, or the link is broken.
+      </p>
+      <Link
+        href="/"
+        className="inline-flex items-center gap-2 mt-8 bg-fitlog-accent text-black font-semibold px-6 py-3 rounded-full hover:opacity-90 transition-opacity"
+      >
+        <ArrowLeft size={18} />
+        Back to Workouts
+      </Link>
+    </div>
   );
 }
